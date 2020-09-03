@@ -19,6 +19,27 @@ class XipsoloModel {
     })
       .then(res => res.json())
   }
+
+  static update = (xipsoloData, xipsoloId) => {
+    return fetch(`${url}/xipsolos/${xipsoloId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(xipsoloData)
+    })
+      .then(res => res.json())
+
+  } 
+  static delete = (xipsoloId) => {
+    return fetch(`${url}/xipsolos/${xipsoloId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(res => res.json())
+  }
 }
 
 export default XipsoloModel

@@ -15,6 +15,7 @@ class XipsoloList extends Component {
 
   fetchData = () => {
     XipsoloModel.all().then(data => {
+      console.log(data)
       this.setState({ xipsolos: data.xipsolos })
     })
   }
@@ -23,7 +24,7 @@ class XipsoloList extends Component {
     let xipsoloList = this.state.xipsolos.map((xipsolo, index) => {
       return (
         <Link to={`/xipsolos/${ xipsolo._id }`} key={index}>
-          <XipsoloNet {...xipsolo} />
+          <XipsoloNet xipsolo={xipsolo} />
         </Link>
       )
     })

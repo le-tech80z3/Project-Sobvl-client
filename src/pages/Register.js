@@ -23,7 +23,7 @@ class Register extends Component {
     if (this.state.password !== this.state.password2) return false;
 
     await UserModel.create(this.state) 
-    // topile.push('/login')
+    this.props.history.push('/login')
 
   }
   
